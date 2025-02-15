@@ -45,10 +45,18 @@ int getLength(Node* &head)
 
 void insertAtHead(Node* &head, int d)
 {
-    Node* temp = new Node(d);
-    temp->next = head;
-    head->prev = temp;
-    head = temp;
+    if(head == NULL)
+    {
+        Node* temp = new Node(d);
+        head = temp;
+    }
+    else 
+    {
+        Node* temp = new Node(d);
+        temp->next = head;
+        head->prev = temp;
+        head = temp;
+    }
 }
 
 
