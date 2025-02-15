@@ -62,10 +62,18 @@ void insertAtHead(Node* &head, int d)
 
 void insertAtTail(Node* &tail, int d)
 {
-    Node* temp = new Node(d);
-    tail->next = temp;
-    temp->prev = tail;
-    tail = temp;
+    if(tail == NULL)
+    {
+        Node* temp = new Node(d);
+        tail = temp;
+    }
+    else
+    {
+        Node* temp = new Node(d);
+        tail->next = temp;
+        temp->prev = tail;
+        tail = temp;
+    }
 }
 
 
